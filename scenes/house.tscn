@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c56cfh5y8dhko"]
+
+[ext_resource type="Texture2D" uid="uid://bl5m2dh8go100" path="res://assets/pixel_houses/house3.png" id="1_d7po0"]
+[ext_resource type="Script" uid="uid://bvj6gi556brhx" path="res://scenes/house.gd" id="1_qtlar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ro6"]
+size = Vector2(69, 73)
+
+[node name="Node2D" type="Area2D" unique_id=35489002]
+script = ExtResource("1_qtlar")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=453965466]
+texture = ExtResource("1_d7po0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709250774]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_i1ro6")

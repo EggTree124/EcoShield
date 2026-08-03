@@ -1,15 +1,27 @@
 [gd_scene format=3 uid="uid://mqwnqhdqlra"]
 
 [ext_resource type="PackedScene" uid="uid://81e5kxw3bdd2" path="res://scenes/map.tscn" id="1_o5qli"]
+[ext_resource type="FontFile" uid="uid://berio3o0qiy4b" path="res://assets/AGoblinAppears-o2aV.ttf" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://4rywwnunpy2m" path="res://scenes/hud.tscn" id="2_0wfyh"]
 
 [node name="Node2D" type="Node2D" unique_id=2115625146]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=803497252]
-position = Vector2(1009, 537)
+position = Vector2(959, 544)
 
 [node name="Map" parent="." unique_id=1396814916 instance=ExtResource("1_o5qli")]
-position = Vector2(2, -3)
+position = Vector2(-65, -72)
 
 [node name="Node2D" parent="." unique_id=772323482 instance=ExtResource("2_0wfyh")]
-position = Vector2(6, 1)
+position = Vector2(1348, -38)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=127155517]
+offset_left = 1311.0
+offset_top = 40.0
+offset_right = 1880.0
+offset_bottom = 148.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_sugp2")
+theme_override_font_sizes/normal_font_size = 69
+text = "Week: 1"
+horizontal_alignment = 2

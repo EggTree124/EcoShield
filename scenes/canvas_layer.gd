@@ -20,3 +20,11 @@ func _on_button_pressed() -> void:
 		return
 	current_house.waste = 0
 	waste.text = "Waste: 0 kg"
+
+func _process(delta: float) -> void:
+	if current_house:
+		waste.text = "Waste: %d kg" % current_house.waste
+		if current_house.waste >= 80:
+			waste.add_theme_color_override("font_color", Color.RED)
+		else:
+			waste.add_theme_color_override("font_color", Color.WHITE)

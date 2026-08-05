@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://da7fhi35dso8j"]
+
+[ext_resource type="Script" uid="uid://w4hourb7bjdh" path="res://flood_zone.gd" id="1_p320p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ro6"]
+size = Vector2(55, 48)
+
+[node name="FloodZone" type="Area2D" unique_id=2927942]
+script = ExtResource("1_p320p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=149061785]
+position = Vector2(27.5, 23)
+shape = SubResource("RectangleShape2D_i1ro6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1297225472]
+wait_time = 2.0
+autostart = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=131626785]
+color = Color(0.42745098, 0.65882355, 0.64705884, 0.5568628)
+polygon = PackedVector2Array(-1, -1, 54, -1, 53, 48, -1, 46)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

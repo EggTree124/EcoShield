@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://deh3fl670q7p2" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://4rywwnunpy2m" path="res://scenes/hud.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://5gn337v38roy" path="res://scenes/canvas_layer.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://da7fhi35dso8j" path="res://scenes/flood_zone.tscn" id="6_tefeu"]
 
 [node name="Node2D" type="Node2D" unique_id=2115625146]
 script = ExtResource("1_tbgi4")
@@ -79,6 +80,13 @@ theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 96
 text = "WASTE:"
 
+[node name="Label4" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2014474020]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 96
+text = "STATUS:"
+
 [node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1573755983]
 layout_mode = 2
 text = "REMOVE WASTE"
@@ -86,6 +94,18 @@ text = "REMOVE WASTE"
 [node name="Timer" type="Timer" parent="." unique_id=2099211127]
 wait_time = 2.0
 autostart = true
+
+[node name="FloodZone" parent="." unique_id=2927942 instance=ExtResource("6_tefeu")]
+position = Vector2(941, 494)
+
+[node name="FloodZone4" parent="." unique_id=1522503834 instance=ExtResource("6_tefeu")]
+position = Vector2(960, 134)
+
+[node name="FloodZone2" parent="." unique_id=1865425141 instance=ExtResource("6_tefeu")]
+position = Vector2(254, 570)
+
+[node name="FloodZone3" parent="." unique_id=334288037 instance=ExtResource("6_tefeu")]
+position = Vector2(1535, 606)
 
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

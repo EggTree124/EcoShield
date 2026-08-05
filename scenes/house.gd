@@ -5,7 +5,8 @@ extends Area2D
 @export var residents := 4
 @export var waste_generation := 1
 @export var max_waste := 100
-
+var flooded := false
+var in_flood_zone := false
 func _ready():
 	input_pickable = true
 	add_to_group("houses")

@@ -118,7 +118,8 @@ autostart = true
 position = Vector2(941, 494)
 
 [node name="FloodZone4" parent="." unique_id=1522503834 instance=ExtResource("6_tefeu")]
-position = Vector2(960, 134)
+position = Vector2(960, 175)
+scale = Vector2(1.0525833, 0.6273529)
 
 [node name="FloodZone2" parent="." unique_id=1865425141 instance=ExtResource("6_tefeu")]
 position = Vector2(254, 570)

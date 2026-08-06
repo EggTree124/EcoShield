@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://exiufbn76vqk"]
+
+[ext_resource type="Texture2D" uid="uid://bnli3ph416m0o" path="res://assets/sewer.png" id="1_8thwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1ro6"]
+radius = 70.26379
+
+[node name="Node2D" type="Area2D" unique_id=1276816977]
+scale = Vector2(0.26606488, 0.26606488)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=632827833]
+position = Vector2(0, 1)
+scale = Vector2(0.42909092, 0.42909092)
+texture = ExtResource("1_8thwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=543428120]
+shape = SubResource("CircleShape2D_i1ro6")

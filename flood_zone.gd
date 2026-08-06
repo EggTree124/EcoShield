@@ -2,7 +2,8 @@ extends Area2D
 @export var water_level := 0
 @export var max_water := 100
 @export var flood_speed := 5
-
+func _ready() -> void:
+	add_to_group("floodzones")
 func _on_timer_timeout() -> void:
 	water_level += flood_speed
 	water_level = clamp(water_level, 0, max_water)

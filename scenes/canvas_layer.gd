@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var residents = $Panel/VBoxContainer/Label2
 @onready var waste = $Panel/VBoxContainer/Label3
 @onready var status = $Panel/VBoxContainer/Label4
+@onready var money_label: Label = $Panel/VBoxContainer/Label5
 var current_house: Area2D = null
 func _ready():
 	panel.hide()
@@ -20,6 +21,9 @@ func show_house_info(house):
 	else:
 		status.text = "Status: Safe"
 
+func update_money(money):
+	money_label.text = "Money: " + str(money)
+	
 func _on_button_pressed() -> void:
 	if current_house == null:
 		return

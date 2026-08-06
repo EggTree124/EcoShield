@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	var was_flooded = flooded
 	flooded = in_flood_zone and current_water_level >= 60
 	if flooded != was_flooded:
-		print(house_name, " Flooded:", flooded)
+		print(house_name, "Flooded:", flooded)
 	if flooded:
 		modulate = Color(0.6, 0.8, 1.0)
 	else:

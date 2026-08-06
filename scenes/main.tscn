@@ -32,16 +32,6 @@ theme_override_font_sizes/normal_font_size = 69
 text = "Week: 1"
 horizontal_alignment = 2
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=658742080]
-offset_left = 43.0
-offset_top = 34.0
-offset_right = 612.0
-offset_bottom = 142.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_sugp2")
-theme_override_font_sizes/normal_font_size = 69
-text = "Week: 1"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=214967308 groups=["hud"]]
 offset = Vector2(1675, 500)
 transform = Transform2D(1, 0, 0, 1, 1675, 500)
@@ -75,35 +65,35 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 46
 text = "HOUSE"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=70200120]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 46
 text = "RESIDENTS:"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1920070683]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 46
 text = "WASTE:"
 
 [node name="Label4" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2014474020]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 46
 text = "STATUS:"
 
 [node name="Label5" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1898765477]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 46
 text = "MONEY: "
 
 [node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1573755983]
@@ -118,7 +108,7 @@ autostart = true
 position = Vector2(941, 494)
 
 [node name="FloodZone4" parent="." unique_id=1522503834 instance=ExtResource("6_tefeu")]
-position = Vector2(960, 175)
+position = Vector2(889.00006, 175)
 scale = Vector2(1.0525833, 0.6273529)
 
 [node name="FloodZone2" parent="." unique_id=1865425141 instance=ExtResource("6_tefeu")]

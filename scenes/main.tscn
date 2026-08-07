@@ -39,10 +39,10 @@ script = ExtResource("4_jyhfs")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1833519560]
 custom_minimum_size = Vector2(1, 1)
-offset_left = -1159.0
-offset_top = 91.000015
-offset_right = -297.0
-offset_bottom = 573.0
+offset_left = -997.0
+offset_top = 264.0
+offset_right = -253.0
+offset_bottom = 580.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
@@ -65,61 +65,68 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "HOUSE"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=70200120]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "RESIDENTS:"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1920070683]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "WASTE:"
 
 [node name="Label4" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2014474020]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "STATUS:"
 
 [node name="Label5" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1898765477]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "MONEY: "
 
 [node name="Label6" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=708827371]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "SCORE: "
 
 [node name="Label7" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1038387696]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "WEEK:"
+
+[node name="Label8" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=718946083]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 23
+text = "Action point(s):"
 
 [node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1573755983]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "COLLECT WASTE"
 
 [node name="Button2" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=587401379]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sugp2")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 23
 text = "END WEEK"
 
 [node name="FloodZone" parent="." unique_id=2927942 instance=ExtResource("6_tefeu")]

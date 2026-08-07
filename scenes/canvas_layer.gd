@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var money_label: Label = $Panel/VBoxContainer/Label5
 @onready var score_label: Label = $Panel/VBoxContainer/Label6
 @onready var week_label: Label = $Panel/VBoxContainer/Label7
+@onready var ap_label: Label = $Panel/VBoxContainer/Label8
 
 var current_house: Area2D = null
 func _ready():
@@ -30,7 +31,10 @@ func update_stats(money, score):
 
 func update_week(week, max_week):
 	week_label.text = "Week: %d / %d" % [week, max_week]
-	
+
+func update_ap(ap, max_ap):
+	ap_label.text = "AP: %d / %d" % [ap, max_ap]
+
 func _on_button_pressed() -> void:
 	if current_house == null:
 		return

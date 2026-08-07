@@ -39,14 +39,14 @@ script = ExtResource("4_jyhfs")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1833519560]
 custom_minimum_size = Vector2(1, 1)
-offset_left = -686.0
-offset_top = -5.9999847
-offset_right = -646.0
-offset_bottom = 34.000015
+offset_left = -1018.0
+offset_top = 172.00002
+offset_right = -296.0
+offset_bottom = 580.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=938836334]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=472602495]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,7 +55,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -343.0
 offset_top = -165.5
-offset_right = 343.0
+offset_right = 171.0
 offset_bottom = 165.5
 grow_horizontal = 2
 grow_vertical = 2

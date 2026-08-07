@@ -4,12 +4,20 @@ extends Node2D
 
 var money := 100
 const DRAINAGE_COST := 30
+@export var score := 0
 
 var build_mode := false
 
 func _ready() -> void:
-	get_tree().call_group("hud", "update_money", money)
+	add_to_group("game")
+	get_tree().call_group("hud", "update_stats", money, score)
 
+func collect_house_waste(house):
+	var collected = house.collect_waste()
+	money += collected
+	score += collected
+	get_tree().call_group("hud", "update_stats", money, score)
+	
 func _on_timer_timeout() -> void:
 	for house in get_tree().get_nodes_in_group("houses"):
 		house.generate_waste()
@@ -26,7 +34,7 @@ func _input(event: InputEvent) -> void:
 				build_mode = false
 				return
 			money -= DRAINAGE_COST
-			get_tree().call_group("hud", "update_money", money)
+			get_tree().call_group("hud", "update_stats", money, score)
 			var drainage = drainage_scene.instantiate()
 			drainage.global_position = get_global_mouse_position()
 			add_child(drainage)

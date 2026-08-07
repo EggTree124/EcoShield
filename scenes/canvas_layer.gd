@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var waste = $Panel/VBoxContainer/Label3
 @onready var status = $Panel/VBoxContainer/Label4
 @onready var money_label: Label = $Panel/VBoxContainer/Label5
+@onready var score_label: Label = $Panel/VBoxContainer/Label6
+
 var current_house: Area2D = null
 func _ready():
 	panel.hide()
@@ -21,14 +23,13 @@ func show_house_info(house):
 	else:
 		status.text = "Status: Safe"
 
-func update_money(money):
+func update_stats(money, score):
 	money_label.text = "Money: " + str(money)
-	
+	score_label.text = "Score: " + str(score)
 func _on_button_pressed() -> void:
 	if current_house == null:
 		return
-	current_house.waste = 0
-	waste.text = "Waste: 0 kg"
+	get_tree().call_group("game", "collect_house_waste", current_house)
 
 func _process(delta: float) -> void:
 	if current_house:

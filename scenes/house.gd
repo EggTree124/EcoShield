@@ -22,6 +22,11 @@ func generate_waste():
 		return
 	waste += waste_generation
 	waste = min(waste, max_waste)
+	
+func collect_waste() -> int:
+	var collected = waste
+	waste = 0
+	return collected
 
 func _process(delta: float) -> void:
 	var was_flooded = flooded

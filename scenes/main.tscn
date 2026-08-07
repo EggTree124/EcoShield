@@ -21,17 +21,6 @@ position = Vector2(-65, -72)
 [node name="Node2D" parent="." unique_id=772323482 instance=ExtResource("2_0wfyh")]
 position = Vector2(1348, -38)
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=127155517]
-offset_left = 1311.0
-offset_top = 40.0
-offset_right = 1880.0
-offset_bottom = 148.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_sugp2")
-theme_override_font_sizes/normal_font_size = 69
-text = "Week: 1"
-horizontal_alignment = 2
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=214967308 groups=["hud"]]
 offset = Vector2(1675, 500)
 transform = Transform2D(1, 0, 0, 1, 1675, 500)
@@ -39,10 +28,15 @@ script = ExtResource("4_jyhfs")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1833519560]
 custom_minimum_size = Vector2(1, 1)
-offset_left = -997.0
-offset_top = 264.0
-offset_right = -253.0
-offset_bottom = 580.0
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = -0.407
+anchor_right = 0.08400001
+anchor_bottom = -0.407
+offset_left = -1158.28
+offset_top = 703.56
+offset_right = -414.28003
+offset_bottom = 1019.56
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
@@ -63,56 +57,56 @@ alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2009600393]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "HOUSE"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=70200120]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "RESIDENTS:"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1920070683]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "WASTE:"
 
 [node name="Label4" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=2014474020]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "STATUS:"
 
 [node name="Label5" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1898765477]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "MONEY: "
 
 [node name="Label6" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=708827371]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "SCORE: "
 
 [node name="Label7" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1038387696]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "WEEK:"
 
 [node name="Label8" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=718946083]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "Action point(s):"

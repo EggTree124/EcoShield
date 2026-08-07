@@ -41,12 +41,7 @@ func end_week():
 	action_points = MAX_ACTION_POINTS
 	get_tree().call_group("hud","update_ap",action_points,MAX_ACTION_POINTS)
 	current_week += 1
-	get_tree().call_group(
-		"hud",
-		"update_week",
-		current_week,
-		MAX_WEEKS
-	)
+	get_tree().call_group("hud","update_week",current_week,MAX_WEEKS)
 
 func use_action_point() -> bool:
 	if action_points <= 0:
@@ -66,13 +61,11 @@ func _input(event: InputEvent) -> void:
 			if !use_action_point():
 				build_mode = false
 				return
-
 			if money < DRAINAGE_COST:
 				build_mode = false
 				return
 			money -= DRAINAGE_COST
 			get_tree().call_group("hud", "update_stats", money, score)
-			
 			var drainage = drainage_scene.instantiate()
 			drainage.global_position = get_global_mouse_position()
 			add_child(drainage)

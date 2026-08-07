@@ -3,7 +3,7 @@ extends Area2D
 @export var house_name := "House"
 @export var waste := 20
 @export var residents := 4
-@export var waste_generation := 1
+@export var waste_generation := 3
 @export var max_waste := 100
 var flooded := false
 var in_flood_zone := false

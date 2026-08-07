@@ -39,10 +39,10 @@ script = ExtResource("4_jyhfs")
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1833519560]
 custom_minimum_size = Vector2(1, 1)
-offset_left = -1018.0
-offset_top = 172.00002
-offset_right = -296.0
-offset_bottom = 580.0
+offset_left = -1159.0
+offset_top = 91.000015
+offset_right = -297.0
+offset_bottom = 573.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
@@ -103,13 +103,24 @@ theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 46
 text = "SCORE: "
 
+[node name="Label7" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1038387696]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 46
+text = "WEEK:"
+
 [node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1573755983]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 46
 text = "COLLECT WASTE"
 
-[node name="Timer" type="Timer" parent="." unique_id=2099211127]
-wait_time = 2.0
-autostart = true
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=587401379]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 46
+text = "END WEEK"
 
 [node name="FloodZone" parent="." unique_id=2927942 instance=ExtResource("6_tefeu")]
 position = Vector2(943, 503)
@@ -126,4 +137,4 @@ scale = Vector2(0.72, 1)
 position = Vector2(1643, 578)
 
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

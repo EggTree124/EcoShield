@@ -1,17 +1,27 @@
-name: First CI Test
+name: Godot CI
 
 on:
   push:
 
 jobs:
-  test:
+  godot-check:
     runs-on: docker
-    steps:
-      - name: Say hello
-        run: echo "Hello from Forgejo Actions!"
 
-      - name: Show environment
+    container:
+      image: barichello/godot-ci:4.7.1
+
+    steps:
+      - name: Check out repository
+        uses: https://data.forgejo.org/actions/checkout@v6
+
+      - name: Check Godot version
+        run: godot --version
+
+      - name: Import project
+        run: godot --headless --editor --quit --path .
+
+      - name: Verify project files
         run: |
-          echo "CI is working!"
-          echo "Repository: $GITHUB_REPOSITORY"
-          echo "Branch: $GITHUB_REF_NAME"
+          test -f project.godot
+          echo "project.godot exists"
+          echo "Godot CI check passed!"

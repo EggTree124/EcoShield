@@ -37,7 +37,7 @@ jobs:
           ls -lh builds/EcoShield.exe
           echo "Windows build created successfully."
       
-        - name: Upload Windows build
+      - name: Upload Windows build
         uses: https://data.forgejo.org/actions/upload-artifact@v4
         with:
           name: EcoShield-Windows

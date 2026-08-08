@@ -20,9 +20,13 @@ func _input_event(_viewport, event, _shape_idx):
 func generate_waste():
 	if flooded:
 		return
-	waste += waste_generation
+	var generated_waste = waste_generation
+	for bin in get_tree().get_nodes_in_group("trash_bins"):
+		if bin.affects_house(self):
+			generated_waste *= (1.0 - bin.waste_reduction)
+
+	waste += generated_waste
 	waste = min(waste, max_waste)
-	
 func collect_waste() -> int:
 	var collected = waste
 	waste = 0

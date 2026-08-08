@@ -5,12 +5,14 @@
 [ext_resource type="Script" uid="uid://deh3fl670q7p2" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://4rywwnunpy2m" path="res://scenes/hud.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://exiufbn76vqk" path="res://scenes/drainage.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://d1nhnvo33kltb" path="res://scenes/Trashbin.tscn" id="3_tipki"]
 [ext_resource type="Script" uid="uid://5gn337v38roy" path="res://scenes/canvas_layer.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://da7fhi35dso8j" path="res://scenes/flood_zone.tscn" id="6_tefeu"]
 
 [node name="Node2D" type="Node2D" unique_id=2115625146]
 script = ExtResource("1_tbgi4")
 drainage_scene = ExtResource("2_o6xl0")
+trash_bin_scene = ExtResource("3_tipki")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=803497252]
 position = Vector2(959, 544)
@@ -127,7 +129,7 @@ text = "END WEEK"
 position = Vector2(943, 503)
 
 [node name="FloodZone4" parent="." unique_id=1522503834 instance=ExtResource("6_tefeu")]
-position = Vector2(960, 185)
+position = Vector2(960, 185.00002)
 scale = Vector2(1.0525833, 0.6273529)
 
 [node name="FloodZone2" parent="." unique_id=1865425141 instance=ExtResource("6_tefeu")]

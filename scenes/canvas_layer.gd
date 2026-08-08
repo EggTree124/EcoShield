@@ -23,7 +23,7 @@ func show_house_info(house):
 	if house.flooded:
 		status.text = "Status: 🌊 Flooded"
 	else:
-		status.text = "Status: Safe" #safe
+		status.text = "Status: Safe" #safe yach
 
 func update_stats(money, score):
 	money_label.text = "Money: " + str(money)

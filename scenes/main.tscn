@@ -9,6 +9,13 @@
 [ext_resource type="Script" uid="uid://5gn337v38roy" path="res://scenes/canvas_layer.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://da7fhi35dso8j" path="res://scenes/flood_zone.tscn" id="6_tefeu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
+bg_color = Color(0.21363416, 0.2562717, 0.19779876, 0.5529412)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+
 [node name="Node2D" type="Node2D" unique_id=2115625146]
 script = ExtResource("1_tbgi4")
 drainage_scene = ExtResource("2_o6xl0")
@@ -35,12 +42,13 @@ anchor_left = 0.08400001
 anchor_top = -0.407
 anchor_right = 0.08400001
 anchor_bottom = -0.407
-offset_left = -1158.28
-offset_top = 703.56
-offset_right = -414.28003
-offset_bottom = 1019.56
+offset_left = -1247.28
+offset_top = 341.56
+offset_right = -503.28003
+offset_bottom = 657.56
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_85g3d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=472602495]
 layout_mode = 1

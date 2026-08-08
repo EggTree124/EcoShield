@@ -9,6 +9,7 @@ jobs:
 
     container:
       image: barichello/godot-ci:4.7.1
+      network: forgejo
 
     steps:
       - name: Check out repository

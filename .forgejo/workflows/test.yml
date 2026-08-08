@@ -39,6 +39,8 @@ jobs:
       
       - name: Upload Windows build
         uses: https://data.forgejo.org/actions/upload-artifact@v3
+        env:
+          ACTIONS_RUNTIME_URL: http://forgejo:3000/api/actions_pipeline/
         with:
           name: EcoShield-Windows
           path: builds/

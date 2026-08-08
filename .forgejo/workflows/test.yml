@@ -1,0 +1,17 @@
+name: First CI Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: docker
+    steps:
+      - name: Say hello
+        run: echo "Hello from Forgejo Actions!"
+
+      - name: Show environment
+        run: |
+          echo "CI is working!"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF_NAME"

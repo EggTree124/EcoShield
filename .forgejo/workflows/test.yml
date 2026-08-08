@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  godot-check:
+  godot-build:
     runs-on: docker
 
     container:
@@ -23,5 +23,16 @@ jobs:
       - name: Verify project files
         run: |
           test -f project.godot
-          echo "project.godot exists"
-          echo "Godot CI check passed!"
+          test -f export_presets.cfg
+          echo "Project files verified."
+
+      - name: Build Windows game
+        run: |
+          mkdir -p builds
+          godot --headless --path . --export-release "Windows Desktop" builds/EcoShield.exe
+
+      - name: Verify Windows build
+        run: |
+          test -f builds/EcoShield.exe
+          ls -lh builds/EcoShield.exe
+          echo "Windows build created successfully."

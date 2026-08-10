@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1nhnvo33kltb" path="res://scenes/Trashbin.tscn" id="3_tipki"]
 [ext_resource type="Script" uid="uid://5gn337v38roy" path="res://scenes/canvas_layer.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://da7fhi35dso8j" path="res://scenes/flood_zone.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bphxhlg6nri4l" path="res://scenes/truck.tscn" id="9_85g3d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
 bg_color = Color(0.21363416, 0.2562717, 0.19779876, 0.5529412)
@@ -146,6 +147,9 @@ scale = Vector2(0.72, 1)
 
 [node name="FloodZone3" parent="." unique_id=334288037 instance=ExtResource("6_tefeu")]
 position = Vector2(1643, 578)
+
+[node name="Node3D" parent="." unique_id=69558266 instance=ExtResource("9_85g3d")]
+position = Vector2(1448, 252)
 
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

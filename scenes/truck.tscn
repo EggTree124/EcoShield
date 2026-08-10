@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bphxhlg6nri4l"]
+
+[ext_resource type="Texture2D" uid="uid://bp7ddru5l5d1x" path="res://assets/truck.png" id="1_8ivgs"]
+[ext_resource type="Script" uid="uid://b2e3j7mjbuisu" path="res://scenes/truck.gd" id="1_w5yki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmwig"]
+size = Vector2(155, 66.5)
+
+[node name="Node3D" type="Area2D" unique_id=69558266]
+script = ExtResource("1_w5yki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1973065044]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_qmwig")
+
+[node name="Timer" type="Timer" parent="." unique_id=795684179]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=994836409]
+position = Vector2(-2, 7)
+scale = Vector2(0.28076923, 0.28076923)
+texture = ExtResource("1_8ivgs")

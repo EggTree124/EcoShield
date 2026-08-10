@@ -6,7 +6,7 @@ func _ready() -> void:
 	add_to_group("flood_zones")
 func _on_timer_timeout() -> void:
 	water_level += flood_speed
-	water_level = clamp(water_level, 0, max_water)
+	water_level = clamp(water_level, 0, max_water) #lolololll
 	
 	for area in get_overlapping_areas():
 		if area.is_in_group("houses"):

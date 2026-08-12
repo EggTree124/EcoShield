@@ -16,7 +16,8 @@ const MAX_WEEKS := 12
 
 const MAX_ACTION_POINTS := 5
 var action_points := MAX_ACTION_POINTS
-
+var pollution := 0.0
+const MAX_POLLUTION := 100.0
 
 func _ready() -> void:
 	add_to_group("game")
@@ -24,13 +25,14 @@ func _ready() -> void:
 	get_tree().call_group("hud", "update_week", current_week, MAX_WEEKS)
 	get_tree().call_group("hud", "update_ap", action_points, MAX_ACTION_POINTS)
 
-
 func collect_house_waste(house):
 	if !use_action_point():
 		return
 	var collected = house.collect_waste()
 	money += collected
 	score += collected
+	pollution -= collected * 0.05
+	pollution = clamp(pollution, 0.0, 100.0)
 	get_tree().call_group("hud", "update_stats", money, score)
 
 func simulate_week():
@@ -38,12 +40,25 @@ func simulate_week():
 		house.generate_waste()
 	print("Week simulated.")
 
+func update_pollution():
+	var total_waste := 0.0
+
+	for house in get_tree().get_nodes_in_group("houses"):
+		total_waste += house.waste
+
+	pollution += total_waste * 0.1
+	pollution = clamp(pollution, 0.0, 100.0)
+
 func end_week():
 	if current_week >= MAX_WEEKS:
 		get_tree().quit()
 		return
+
 	simulate_week()
+	update_pollution()
+
 	action_points = MAX_ACTION_POINTS
+
 	get_tree().call_group(
 		"hud",
 		"update_ap",
@@ -59,6 +74,12 @@ func end_week():
 		MAX_WEEKS
 	)
 
+	get_tree().call_group(
+		"hud",
+		"update_pollution",
+		pollution,
+		MAX_POLLUTION
+	)
 func use_action_point() -> bool:
 	if action_points <= 0:
 		print("No Action Points left.")
@@ -74,7 +95,6 @@ func use_action_point() -> bool:
 	)
 
 	return true
-
 
 func _input(event: InputEvent) -> void:
 	# Enter Drainage Build Mode
@@ -121,7 +141,6 @@ func place_drainage():
 	add_child(drainage)
 
 	print("Drainage placed. Money:", money)
-
 
 func place_trash_bin():
 	# Check money FIRST

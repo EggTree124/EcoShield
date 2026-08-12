@@ -27,6 +27,7 @@ func generate_waste():
 
 	waste += generated_waste
 	waste = min(waste, max_waste)
+
 func collect_waste() -> int:
 	var collected = waste
 	waste = 0

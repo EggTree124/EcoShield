@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var score_label: Label = $Panel/VBoxContainer/Label6
 @onready var week_label: Label = $Panel/VBoxContainer/Label7
 @onready var ap_label: Label = $Panel/VBoxContainer/Label8
+@onready var pollution_label: Label = $Panel/VBoxContainer/Label10
 
 var current_house: Area2D = null
 func _ready():
@@ -35,6 +36,22 @@ func update_week(week, max_week):
 func update_ap(ap, max_ap):
 	ap_label.text = "AP: %d / %d" % [ap, max_ap]
 
+func update_pollution(pollution, max_pollution):
+	if pollution < 25:
+		pollution_label.add_theme_color_override("font_color", Color.GREEN)
+		pollution_label.text = "POLLUTION: SAFE"
+
+	elif pollution < 50:
+		pollution_label.add_theme_color_override("font_color", Color.YELLOW)
+		pollution_label.text = "POLLUTION: MODERATE"
+
+	elif pollution < 75:
+		pollution_label.add_theme_color_override("font_color", Color.ORANGE)
+		pollution_label.text = "POLLUTION: AFFECTED"
+
+	else:
+		pollution_label.add_theme_color_override("font_color", Color.RED)
+		pollution_label.text = "POLLUTION: CRITICAL"
 func _on_button_pressed() -> void:
 	if current_house == null:
 		return
@@ -48,6 +65,6 @@ func _process(delta: float) -> void:
 		else:
 			waste.add_theme_color_override("font_color", Color.WHITE)
 		if current_house.flooded:
-			status.text = "Status: 🌊 Flooded"
+			status.text = "Status: Flooded"
 		else:
 			status.text = "Status: Safe"

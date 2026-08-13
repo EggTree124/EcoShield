@@ -96,21 +96,32 @@ func illegal_dumping():
 		house.name + " gained 20 kg waste."
 	)
 
+func update_flooding():
+	for flood_zone in get_tree().get_nodes_in_group("flood_zones"):
+		var reduction := 0.0
+
+		for tree in get_tree().get_nodes_in_group("trees"):
+			if tree.global_position.distance_to(flood_zone.global_position) <= tree.effect_radius:
+				reduction += tree.flood_reduction
+
+		flood_zone.water_level -= reduction
+		flood_zone.water_level = max(flood_zone.water_level, 0.0)
+
 func end_week():
 	if current_week >= MAX_WEEKS:
 		get_tree().quit()
 		return
 	
 	clear_event()
-	
 	simulate_week()
-	update_pollution()
 	
 	if randf() > 0.3:
 		generate_random_event()
 		apply_event()
 	action_points = MAX_ACTION_POINTS
-
+	update_pollution()
+	update_flooding()
+	
 	get_tree().call_group(
 		"hud",
 		"update_ap",
@@ -132,6 +143,9 @@ func end_week():
 		pollution,
 		MAX_POLLUTION
 	)
+	
+	update_flooding()
+	print("Week simulated")
 
 func clear_event():
 	get_tree().call_group(

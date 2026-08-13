@@ -7,6 +7,7 @@
 size = Vector2(363, 275)
 
 [node name="Node2D" type="Area2D" unique_id=274994451]
+scale = Vector2(0.26013985, 0.38709676)
 script = ExtResource("1_vplca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=260182501]

@@ -2,10 +2,11 @@ extends Node2D
 
 @export var drainage_scene: PackedScene
 @export var trash_bin_scene: PackedScene
-
+@export var tree_scene: PackedScene
 var money := 100
 const DRAINAGE_COST := 30
 const TRASH_BIN_COST := 20
+const TREE_COST := 25
 
 @export var score := 0
 
@@ -156,7 +157,6 @@ func use_action_point() -> bool:
 	return true
 
 func _input(event: InputEvent) -> void:
-	# Enter Drainage Build Mode
 	if event.is_action_pressed("build_drainage"):
 		build_mode = "drainage"
 		print("Drainage Build Mode ON")
@@ -164,6 +164,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("build_trash_bin"):
 		build_mode = "trash_bin"
 		print("Trash Bin Build Mode ON")
+	if event.is_action_pressed("build_tree"):
+		build_mode = "tree"
+		print("Tree Build Mode ON")
+
 	# Handle building
 	if build_mode != "" and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -171,6 +175,8 @@ func _input(event: InputEvent) -> void:
 				place_drainage()
 			elif build_mode == "trash_bin":
 				place_trash_bin()
+			elif build_mode == "tree":
+				place_tree()
 			build_mode = ""
 
 func place_drainage():
@@ -221,5 +227,27 @@ func place_trash_bin():
 	add_child(trash_bin)
 	print("Trash Bin placed. Money:", money)
 
+func place_tree():
+	if money < TREE_COST:
+		print("Not enough money!")
+		return
+
+	if !use_action_point():
+		return
+
+	money -= TREE_COST
+
+	var tree = tree_scene.instantiate()
+	tree.global_position = get_global_mouse_position()
+	add_child(tree)
+
+	get_tree().call_group(
+		"hud",
+		"update_stats",
+		money,
+		score
+	)
+
+	print("Tree planted. Money:", money)
 func _on_button_2_pressed() -> void:
 	get_tree().call_group("game", "end_week")

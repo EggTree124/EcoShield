@@ -109,7 +109,16 @@ func update_flooding():
 
 func end_week():
 	if current_week >= MAX_WEEKS:
-		get_tree().quit()
+		if current_week >= MAX_WEEKS:
+			var final_score := calculate_final_score()
+			var rating := get_final_rating(final_score)
+			print("===== GAME OVER =====")
+			print("Final Score: ", final_score)
+			print("Rating: ", rating)
+			print("Money: ", money)
+			print("Pollution: ", pollution)
+			print("Flooded Houses: ", get_flooded_house_count())
+
 		return
 	
 	clear_event()
@@ -265,3 +274,34 @@ func place_tree():
 	print("Tree planted. Money:", money)
 func _on_button_2_pressed() -> void:
 	get_tree().call_group("game", "end_week")
+
+
+func calculate_final_score() -> int:
+	var final_score := score
+	final_score -= int(pollution)
+	var flooded_houses := get_flooded_house_count()
+	final_score -= flooded_houses * 25
+	final_score += money
+
+	return max(final_score, 0)
+	
+func get_flooded_house_count() -> int:
+	var flooded := 0
+
+	for house in get_tree().get_nodes_in_group("houses"):
+		if house.flooded:
+			flooded += 1
+
+	return flooded
+	
+func get_final_rating(final_score: int) -> String:
+	if final_score >= 800:
+		return "S"
+	elif final_score >= 600:
+		return "A"
+	elif final_score >= 400:
+		return "B"
+	elif final_score >= 200:
+		return "C"
+	else:
+		return "D"

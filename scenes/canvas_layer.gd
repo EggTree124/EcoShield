@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var week_label: Label = $Panel/VBoxContainer/Label7
 @onready var ap_label: Label = $Panel/VBoxContainer/Label8
 @onready var pollution_label: Label = $Panel/VBoxContainer/Label10
+@onready var event_label: Label = $Panel/VBoxContainer/Label11
 
 var current_house: Area2D = null
 func _ready():
@@ -52,6 +53,10 @@ func update_pollution(pollution, max_pollution):
 	else:
 		pollution_label.add_theme_color_override("font_color", Color.RED)
 		pollution_label.text = "POLLUTION: CRITICAL"
+
+func update_event(event_name: String, description: String):
+	event_label.text = "⚠ EVENT: " + event_name + "\n" + description
+
 func _on_button_pressed() -> void:
 	if current_house == null:
 		return

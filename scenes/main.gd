@@ -18,7 +18,7 @@ const MAX_ACTION_POINTS := 5
 var action_points := MAX_ACTION_POINTS
 var pollution := 0.0
 const MAX_POLLUTION := 100.0
-
+var current_event := "None"
 func _ready() -> void:
 	add_to_group("game")
 	get_tree().call_group("hud", "update_stats", money, score)
@@ -48,15 +48,66 @@ func update_pollution():
 
 	pollution += total_waste * 0.1
 	pollution = clamp(pollution, 0.0, 100.0)
+	
+func generate_random_event():
+	var events = [
+		"Heavy Rain",
+		"Illegal Dumping"
+	]
+	current_event = events.pick_random()
+	print("Event: ", current_event)
+
+func apply_event():
+	match current_event:
+		"Heavy Rain":
+			heavy_rain()
+		"Illegal Dumping":
+			illegal_dumping()
+
+func heavy_rain():
+	print("Heavy rain!")
+
+	for flood_zone in get_tree().get_nodes_in_group("flood_zones"):
+		flood_zone.water_level += 25
+
+	get_tree().call_group(
+		"hud",
+		"update_event",
+		"HEAVY RAIN",
+		"Flood water increased."
+	)
+
+func illegal_dumping():
+	var houses = get_tree().get_nodes_in_group("houses")
+
+	if houses.is_empty():
+		return
+
+	var house = houses.pick_random()
+	house.waste += 20
+
+	print("Illegal dumping at ", house.name)
+
+	get_tree().call_group(
+		"hud",
+		"update_event",
+		"ILLEGAL DUMPING",
+		house.name + " gained 20 kg waste."
+	)
 
 func end_week():
 	if current_week >= MAX_WEEKS:
 		get_tree().quit()
 		return
-
+	
+	clear_event()
+	
 	simulate_week()
 	update_pollution()
-
+	
+	if randf() > 0.3:
+		generate_random_event()
+		apply_event()
 	action_points = MAX_ACTION_POINTS
 
 	get_tree().call_group(
@@ -79,6 +130,14 @@ func end_week():
 		"update_pollution",
 		pollution,
 		MAX_POLLUTION
+	)
+
+func clear_event():
+	get_tree().call_group(
+		"hud",
+		"update_event",
+		"NONE",
+		"No special events this week."
 	)
 func use_action_point() -> bool:
 	if action_points <= 0:

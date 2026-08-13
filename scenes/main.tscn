@@ -129,6 +129,13 @@ theme_override_fonts/font = ExtResource("1_sugp2")
 theme_override_font_sizes/font_size = 23
 text = "POLLUTION: "
 
+[node name="Label11" type="Label" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1750707518]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_sugp2")
+theme_override_font_sizes/font_size = 23
+text = "EVENT: "
+
 [node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1573755983]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sugp2")

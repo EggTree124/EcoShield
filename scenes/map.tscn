@@ -275,14 +275,14 @@ texture = ExtResource("2_paxxb")
 position = Vector2(164, 996)
 texture = ExtResource("2_paxxb")
 
-[node name="Node2D" parent="Lower Left" unique_id=1993152924 instance=ExtResource("3_gldc4")]
+[node name="House 10" parent="Lower Left" unique_id=1993152924 instance=ExtResource("3_gldc4")]
 position = Vector2(836, 1013)
 house_name = "House 10"
 
-[node name="Node2D3" parent="Lower Left" unique_id=1189478384 instance=ExtResource("3_gldc4")]
+[node name="House 8" parent="Lower Left" unique_id=1189478384 instance=ExtResource("3_gldc4")]
 position = Vector2(312, 949)
 house_name = "House 8"
 
-[node name="Node2D2" parent="Lower Left" unique_id=1249938452 instance=ExtResource("3_gldc4")]
+[node name="House 9" parent="Lower Left" unique_id=1249938452 instance=ExtResource("3_gldc4")]
 position = Vector2(779, 817)
 house_name = "House 9"

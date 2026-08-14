@@ -202,16 +202,16 @@ texture = ExtResource("2_paxxb")
 position = Vector2(656, 215)
 texture = ExtResource("2_paxxb")
 
-[node name="Node2D4" parent="Upper Left" unique_id=1948234154 instance=ExtResource("3_gldc4")]
+[node name="House 1" parent="Upper Left" unique_id=1948234154 instance=ExtResource("3_gldc4")]
 position = Vector2(566, 228)
 house_name = "House 1"
 waste = 16
 
-[node name="Node2D5" parent="Upper Left" unique_id=786821607 instance=ExtResource("3_gldc4")]
+[node name="House 2" parent="Upper Left" unique_id=786821607 instance=ExtResource("3_gldc4")]
 position = Vector2(164, 40)
 house_name = "House 2"
 
-[node name="Node2D6" parent="Upper Left" unique_id=1989608410 instance=ExtResource("3_gldc4")]
+[node name="House 3" parent="Upper Left" unique_id=1989608410 instance=ExtResource("3_gldc4")]
 position = Vector2(287, 313)
 house_name = "House 3"
 
@@ -237,19 +237,19 @@ texture = ExtResource("2_paxxb")
 position = Vector2(1723, 141)
 texture = ExtResource("2_paxxb")
 
-[node name="Node2D7" parent="Upper Right" unique_id=1797210786 instance=ExtResource("3_gldc4")]
+[node name="House 4" parent="Upper Right" unique_id=1797210786 instance=ExtResource("3_gldc4")]
 position = Vector2(1192, 536)
 house_name = "House 4"
 
-[node name="Node2D8" parent="Upper Right" unique_id=568413022 instance=ExtResource("3_gldc4")]
+[node name="House 6" parent="Upper Right" unique_id=568413022 instance=ExtResource("3_gldc4")]
 position = Vector2(1483, 241)
 house_name = "House 6"
 
-[node name="Node2D9" parent="Upper Right" unique_id=84525161 instance=ExtResource("3_gldc4")]
+[node name="House 7" parent="Upper Right" unique_id=84525161 instance=ExtResource("3_gldc4")]
 position = Vector2(1758, 288)
 house_name = "House 7"
 
-[node name="Node2D10" parent="Upper Right" unique_id=1435804995 instance=ExtResource("3_gldc4")]
+[node name="House 5" parent="Upper Right" unique_id=1435804995 instance=ExtResource("3_gldc4")]
 position = Vector2(1302, 347)
 house_name = "House 5"
 

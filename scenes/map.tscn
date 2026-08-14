@@ -155,15 +155,15 @@ tile_set = SubResource("TileSet_uy4b6")
 
 [node name="Lower Right" type="Node2D" parent="." unique_id=773008231]
 
-[node name="Node2D6" parent="Lower Right" unique_id=1586531564 instance=ExtResource("3_gldc4")]
+[node name="House 12" parent="Lower Right" unique_id=1586531564 instance=ExtResource("3_gldc4")]
 position = Vector2(1741, 953)
 house_name = "House 12"
 
-[node name="Node2D7" parent="Lower Right" unique_id=82062518 instance=ExtResource("3_gldc4")]
+[node name="House 11" parent="Lower Right" unique_id=82062518 instance=ExtResource("3_gldc4")]
 position = Vector2(1423, 897.5)
 house_name = "House 11"
 
-[node name="Node2D4" parent="Lower Right" unique_id=588948946 instance=ExtResource("3_gldc4")]
+[node name="House 13" parent="Lower Right" unique_id=588948946 instance=ExtResource("3_gldc4")]
 position = Vector2(1832, 734)
 house_name = "House 13"
 
